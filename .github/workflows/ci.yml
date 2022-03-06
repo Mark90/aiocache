@@ -120,7 +120,7 @@ jobs:
   #      twine upload dist/*
    - name: Test PyPI upload
      env:
-       TWINE_USERNAME: mark90
+       TWINE_USERNAME: __token__
        TWINE_PASSWORD: ${{ secrets.TEST_PYPI_TOKEN }}
      run: |
-       twine upload -r dist/*
+       twine upload -r testpypi dist/*
