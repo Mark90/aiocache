@@ -44,8 +44,7 @@ jobs:
         os: [ubuntu-20.04]
         pyver: ["3.6", "3.7", "3.8", "3.9"]
         ujson: ["ujson", "no-ujson"]
-        redis: [5.0.14]
-        # redis: [5.0.14, 6.2.6]
+        redis: [5.0.14, 6.2.6]
         memcached: [1.6.14]
       fail-fast: false
     services:
@@ -84,9 +83,8 @@ jobs:
         coverage xml
     - name: Run acceptance tests
       run: pytest -sv tests/acceptance
-    # todo: fix functional tests
-    # - name: Run functional tests
-    #   run: bash examples/run_all.sh
+    - name: Run functional tests
+      run: bash examples/run_all.sh
     - name: Upload coverage
       uses: codecov/codecov-action@v2.1.0
       with:
