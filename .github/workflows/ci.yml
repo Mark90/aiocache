@@ -61,6 +61,7 @@ jobs:
       with:
         python-version: '3.8'
         cache: pip
+        cache-dependency-path: 'setup.py'
     - name: Install tox
       run: pip install tox
     - name: Run syntax checks
@@ -116,6 +117,7 @@ jobs:
       with:
         python-version: 3.${{ matrix.py3ver }}${{ matrix.pysuffix }}
         cache: pip
+        cache-dependency-path: 'setup.py'
     - name: Install tox
       run: pip install tox
     - name: Run tests
