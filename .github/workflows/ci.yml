@@ -79,8 +79,9 @@ jobs:
       run: pip install -e ".[dev,redis,memcached,msgpack]"
     - name: Run unit tests
       run: |
-        pytest tests/ut
-        python -m coverage xml
+        coverage run -m pytest tests/ut
+        coverage combine
+        coverage xml
     - name: Run acceptance tests
       run: pytest -sv tests/acceptance
     # todo: fix functional tests
