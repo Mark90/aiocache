@@ -40,7 +40,7 @@ setup(
         'redis:python_version>="3.7" and python_version<"3.8"': [
             "aioredis>=1.0.0,<2.0"
         ],
-        "memcached": ["aiomcache>=0.5.2"],
+        "memcached": ["aiomcache>=0.5.2,<0.7"],
         "msgpack": ["msgpack>=0.5.5"],
         "dev": [
             "asynctest>=0.11.0",
