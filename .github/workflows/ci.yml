@@ -6,6 +6,7 @@ on:
       - master
       - github-ci # todo: remove
     tags:
+      - '*'
   pull_request:
     branches:
       - master
