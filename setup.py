@@ -48,7 +48,6 @@ setup(
             "flake8",
             "ipdb",
             "marshmallow>=3",
-            "pre-commit",
             "pystache",
             "pytest",
             "pytest-asyncio",
