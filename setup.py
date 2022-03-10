@@ -3,16 +3,14 @@ import os
 
 from setuptools import setup, find_packages
 
-with open(
-    os.path.join(os.path.abspath(os.path.dirname(__file__)), "aiocache/_version.py")
-) as fp:
+with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), "aiocache/_version.py")) as fp:
     try:
         version = re.findall(r"^__version__ = \"([^']+)\"\r?$", fp.read(), re.M)[0]
     except IndexError:
         raise RuntimeError("Unable to determine version.")
 
 
-with open("README.rst", "rt", encoding="utf8") as f:
+with open("README.rst", encoding="utf8") as f:
     readme = f.read()
 
 
@@ -38,9 +36,7 @@ setup(
         # todo: adapt code for aioredis 2.0
         'redis:python_version<"3.7"': ["aioredis>=0.3.3,<2.0"],
         'redis:python_version>="3.8"': ["aioredis>=1.3.0,<2.0"],
-        'redis:python_version>="3.7" and python_version<"3.8"': [
-            "aioredis>=1.0.0,<2.0"
-        ],
+        'redis:python_version>="3.7" and python_version<"3.8"': ["aioredis>=1.0.0,<2.0"],
         # todo: adapt code for aiomcache 0.7 (requires python >= 3.7)
         "memcached": ["aiomcache>=0.5.2,<0.7"],
         "msgpack": ["msgpack>=0.5.5"],
@@ -52,6 +48,7 @@ setup(
             "flake8",
             "ipdb",
             "marshmallow>=3",
+            "pre-commit",
             "pystache",
             "pytest",
             "pytest-asyncio",
