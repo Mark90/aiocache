@@ -84,6 +84,18 @@ jobs:
       if: github.event_name == 'workflow_dispatch' && github.event.inputs.debug_enabled
       with:
         limit-access-to-actor: true
+    - name: Show python/pip version and path
+      run: |
+        which python
+        echo
+        which pip
+        echo
+        python --version
+        echo
+        pip --version
+        echo
+        python -c 'import sys;print("\n".join(sys.path))'
+        echo
     - name: Install ujson
       if: ${{ matrix.ujson == 'ujson' }}
       run: pip install ujson
