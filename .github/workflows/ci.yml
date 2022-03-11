@@ -49,10 +49,10 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-20.04]
-        pyver: ["3.6", "3.7", "3.8", "3.9"]
-        ujson: ["ujson", "no-ujson"]
-        redis: [5.0.14, 6.2.6]
-        memcached: [1.6.14]
+        pyver: ["3.9"] # ["3.6", "3.7", "3.8", "3.9"]
+        ujson: ["ujson"] # ["ujson", "no-ujson"]
+        redis: ["6.2.6"] # ["5.0.14", "6.2.6"]
+        memcached: ["1.6.14"]
       fail-fast: false
     services:
       redis:
@@ -81,7 +81,7 @@ jobs:
     # Allow debugging with tmate
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@v3
-      if: github.event_name == 'workflow_dispatch' && github.event.inputs.debug_enabled
+      # if: github.event_name == 'workflow_dispatch' && github.event.inputs.debug_enabled
       with:
         limit-access-to-actor: true
     - name: Install ujson
